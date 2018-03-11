@@ -8,7 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
+//added a comment to change file so I can recommit to github :jjm
 
 package org.usfirst.frc3930.PowerUp;
 
@@ -94,7 +94,7 @@ public class Robot extends TimedRobot {
         Scheduler.getInstance().run();
         
     }
-// this command doesnt belong here!!!
+// this command doesn't belong here!!!   needs to be moved down in the file
     @Override
     public void autonomousInit() {
         autonomousCommand = new UnconditionalAuto();
