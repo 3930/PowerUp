@@ -72,7 +72,6 @@ public class driveBase extends Subsystem {
         // Put code here to be run every loop
 
     	getRobotDrive().arcadeDrive(Robot.oi.joystick.getRawAxis(1)*knife,-Robot.oi.joystick.getRawAxis(0)*knife);
-    	//System.out.println(NavX.getYaw());
     	
     }
 
@@ -99,28 +98,6 @@ public class driveBase extends Subsystem {
     public double getKnifeValue() {
     	return knife;
     }
-    
-    /*public double getLeftEncoderValue() {
-    	double returnvalue;
-    	returnvalue = frontRight.getSelectedSensorPosition(0)/4096;
-    	returnvalue = returnvalue *6*3.1415;
-    	return returnvalue;
-    }
-    
-    public void resetLeftEncoder() {
-    	frontLeft.setSelectedSensorPosition(0, 0, 0);
-    }
-    
-    public double getRightEncoderValue() {
-    	double returnvalue;
-    	returnvalue = frontRight.getSelectedSensorPosition(0)/4096;
-    	returnvalue = returnvalue *12*3.1415;
-    	return returnvalue;
-    }
-    
-    public void resetRightEncoder() {
-    	frontRight.setSelectedSensorPosition(0, 0, 0);
-    }*/
     
     public double getYaw() {
     	return NavX.getYaw();

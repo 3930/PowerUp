@@ -25,6 +25,7 @@ public class Cameras extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
+    	//Camera 1
     	cv1.setSource(cam1);
     	cam1.setResolution(640, 480);
     	cv1.setEnabled(true);

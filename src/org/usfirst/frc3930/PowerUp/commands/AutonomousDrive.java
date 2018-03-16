@@ -18,7 +18,7 @@ public class AutonomousDrive extends Command {
 	public double speedRight;
 	private char subcommand;
 	//For commands 2 and 3 only - NOT included in constructor
-	private double speedCorrection = Math.abs(Robot.driveBase.driveAngle - Robot.driveBase.getYaw()) * 0.1;
+	private double speedCorrection = Math.abs(Robot.driveBase.driveAngle - Robot.driveBase.getYaw()) * 0.005;
 	
     public AutonomousDrive(double newSpeedLeft, double newSpeedRight, char newSubcommand) {
         // Use requires() here to declare subsystem dependencies
@@ -53,11 +53,11 @@ public class AutonomousDrive extends Command {
     	}else if (subcommand == 'c') {
     		
     		if(Robot.driveBase.getYaw() > Robot.driveBase.driveAngle) {
-    			Robot.driveBase.autoDrive(speedLeft, speedRight);
+    			Robot.driveBase.autoDrive(speedLeft, speedRight * (100 + speedCorrection));
     		}else if(Robot.driveBase.getYaw() < Robot.driveBase.driveAngle){
     			Robot.driveBase.autoDrive(speedLeft * (100 + speedCorrection), speedRight);
     		}else {
-    			Robot.driveBase.autoDrive(speedLeft, speedRight * (100 + speedCorrection));
+    			Robot.driveBase.autoDrive(speedLeft, speedRight);
     		}
     	}
     }
