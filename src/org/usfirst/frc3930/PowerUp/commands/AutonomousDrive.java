@@ -9,8 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
  */
  /*Subcommands:
   * a - Normal drive - Speed for both motors only
-  * b - Drive perfectly straight according to NavX
-  * c - Drive until a certain angle is reached
+  * b - Drive Left until an angle is reached
+  * d - Drive Right until an angle is reached
+  * c - Drive perfectly straight according to NavX
   */
 public class AutonomousDrive extends Command {
 	
@@ -41,10 +42,18 @@ public class AutonomousDrive extends Command {
     		
     		Robot.driveBase.autoDrive(speedLeft,speedRight);
     	
-    	//Subcommand b - Drive to Angle
+    	//Subcommand b - Drive right to Angle
     	}else if (subcommand == 'b') {
     		
     		while(Robot.driveBase.getYaw() <= Robot.driveBase.turnAngle) {
+    			Robot.driveBase.autoDrive(speedLeft, speedRight);
+    		}
+    		Robot.driveBase.autoDrive(0, 0);
+    	
+    	//Subcommand d - Drive left to Angle
+    	}else if (subcommand == 'd') {
+    		
+    		while(Robot.driveBase.getYaw() >= Robot.driveBase.turnAngle) {
     			Robot.driveBase.autoDrive(speedLeft, speedRight);
     		}
     		Robot.driveBase.autoDrive(0, 0);
