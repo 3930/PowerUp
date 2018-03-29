@@ -97,8 +97,7 @@ public class Robot extends TimedRobot {
 // this command doesn't belong here!!!   needs to be moved down in the file
     @Override
     public void autonomousInit() {
-        autonomousCommand = new ConditionalAuto();
-        //autonomousCommand = new UnconditionalAuto();
+        autonomousCommand = new UnconditionalAuto();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
         
