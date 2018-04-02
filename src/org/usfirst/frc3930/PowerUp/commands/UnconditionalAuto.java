@@ -14,8 +14,7 @@ public class UnconditionalAuto extends CommandGroup {
     	requires(Robot.driveBase);
     	//addSequential(new AutonomousDrive(-0.75,-0.75,'a'),4);
     	Robot.driveBase.resetGyro();
-    	Robot.driveBase.setDriveAngle(0);
-    	addSequential(new AutonomousDrive(-0.75,-0.75,'c'),2.5);
+    	addSequential(new AutonomousDrive(0.75,0),2.5);
     	
     	String gameData = DriverStation.getInstance().getGameSpecificMessage();
         if (gameData==null) { gameData = ""; }

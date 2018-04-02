@@ -15,11 +15,10 @@ public class ConditionalAuto extends CommandGroup {
         requires(Robot.driveBase);
         Robot.driveBase.resetGyro();
         
-        Robot.driveBase.setDriveAngle(90);
-        addSequential(new AutonomousDrive(-0.75,-0.75,'c'),1);
-        
-        Robot.driveBase.setTurnAngle(85);
-        addSequential(new AutonomousDrive(-0.60,0.60,'b'),1);
+        Robot.driveBase.setTurnAngle(80);
+
+        addSequential(new AutonomousDrive(0.7,0.0),1);
+        addSequential(new AutonomousTurn(0.5,false));
 		
 		
     }
